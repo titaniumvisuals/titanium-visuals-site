@@ -1,0 +1,218 @@
+/* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@300;500&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif; /* Updated font for better aesthetics */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light background for the entire page */
+}
+
+/* Header Styles */
+header {
+    background: #444; /* Changed header background color to a darker shade */
+}
+
+#navbar {
+    text-align: center; /* Center the navbar content */
+}
+
+#navbar-logo {
+    max-width: 125px; /* Set a max width for the logo */
+    margin-bottom: 10px; /* Space between logo and links */
+}
+
+nav {
+    background-color: #444; /* Darker background for the navbar */
+    padding: 15px; /* Increased padding for better spacing */
+}
+
+nav ul {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Flexbox for horizontal layout */
+    justify-content: center; /* Center items in the navbar */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    font-size: 18px; /* Increased font size for better readability */
+}
+
+nav ul li {
+    margin: 0 15px; /* Space between items */
+}
+
+nav ul li a {
+    color: #fff; /* White text color */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+    text-decoration: none; /* Remove underline */
+}
+
+nav ul li a:hover {
+    color: #fff; /* Keep text color white on hover */
+    background-color: #007bff; /* Change background color on hover */
+    border-radius: 4px; /* Add border radius for a smoother look */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Space between items */
+    }
+
+    body {
+        padding: 10px; /* Adjust padding for mobile */
+    }
+}
+
+/* Welcome Section Styles */
+#welcome {
+    background-image: url('./images/pakata-goh-dtya6wKsEpU-unsplash.jpg'); /* Make sure to replace this with the actual path */
+    color: white; /* Set text color for welcome section */
+    text-align: center;
+    padding: 0; /* Removed padding to eliminate space */
+    height: 300px; /* Keep height consistent */
+    background-size: cover; /* Background image covers the whole section */
+    background-position: center; /* Center the background image */
+}
+
+/* What We Do Section Styles */
+#what-we-do {
+    background: #333; /* Darker background */
+    color: #fff; /* White text color for readability */
+    text-align: center; /* Centered text */
+    border: 1px solid #ccc; /* Border for visual separation */
+    padding: 20px; /* Add padding for spacing */
+}
+
+/* Service Images */
+.service-item img {
+    width: 300px; /* Set width for service images */
+    height: 200px; /* Maintain height */
+    object-fit: cover; /* Preserve aspect ratio */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Drop shadow for depth */
+}
+
+/* Button Styles */
+.service-item button {
+    background: none; /* No background */
+    border: none; /* No border */
+    color: #fff; /* White text */
+    cursor: pointer; /* Pointer on hover */
+    font-size: 16px; /* Font size */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.service-item button:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+/* Dropdown Styles */
+.dropdown-content {
+    display: none; /* Hidden by default */
+    background-color: #fff; /* White background for dropdown */
+    color: #333; /* Dark text color for dropdown items */
+    min-width: 200px; /* Minimum width for dropdown */
+    padding: 12px; /* Padding inside dropdown */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Shadow for dropdown */
+    z-index: 1; /* Ensure dropdown is on top */
+}
+
+.dropdown-content p {
+    padding: 8px 0; /* Padding for a cleaner look */
+    margin: 0; /* Remove margin */
+}
+
+.dropdown-content p:hover {
+    background-color: #f1f1f1; /* Change background on hover */
+}
+
+/* Show the dropdown */
+.show {
+    display: block; /* Show the dropdown */
+}
+
+/* Testimonials Section Styles */
+#testimonials {
+    background: #f0f0f0; /* Light grey background */
+    color: #333; /* Dark text color for readability */
+    text-align: center; /* Centered text */
+    border: 1px solid #ccc; /* Border for visual separation */
+}
+
+.review-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the review items */
+}
+
+.review {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px; /* Space between reviews */
+    max-width: 800px; /* Limit the max width */
+    padding: 10px;
+    border-radius: 8px; /* Rounded corners for reviews */
+    background-color: #fff; /* White background for reviews */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.review.reverse {
+    flex-direction: row-reverse; /* Reverse order for alternating layout */
+}
+
+.review img {
+    width: 60px; 
+    height: 60px; 
+    border-radius: 50%; 
+    margin: 0 15px; /* Space around images */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2); /* Shadow for images */
+}
+
+blockquote {
+    text-align: left; /* Align text to the left */
+    flex: 1; /* Allow text to take available space */
+    margin: 0; /* Remove default margin */
+}
+
+/* Clients Say Section */
+#clients-say {
+    font-size: 2.5rem; /* Increased font size for the clients-say heading */
+    color: black;
+    text-decoration: underline;
+}
+
+/* Footer Styles */
+#footer {
+    background: #333; /* Dark footer background */
+}
+
+#footer-logo img {
+    max-width: 125px; /* Set a max width for the footer logo */
+}
+
+#footer h3 {
+    color: #fff; /* White color for footer headings */
+}
+
+#footer ul {
+    list-style: none; /* No bullet points for footer links */
+    padding: 0; /* Remove padding */
+}
+
+#footer ul li {
+    margin: 5px 0; /* Space between footer links */
+    color: #ffffff; /* White color for footer links */
+}
+
+/* Mobile Styles for Footer */
+@media (max-width: 768px) {
+    #footer {
+        padding: 10px; /* Adjust footer padding for mobile */
+    }
+}
