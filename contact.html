@@ -26,7 +26,24 @@
 </header>
 <main>
     <h2>Contact Us</h2>
-    <form class="contact-form"  action="https://formsubmit.co/titaniumvisuals.sa@gmail.com" method="POST">
+    <div id="formkeep-embed" data-formkeep-url="https://formkeep.com/p/65af3948b8b01ad540e773e6d2a6f889?embedded=1"></div>
+
+<script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+<script type="text/javascript" src="https://cdn.formkeep.com/formkeep-embed.js"></script>
+
+<!-- Get notified when the form is submitted, add your own code below: -->
+<script>
+const formkeepEmbed = document.querySelector('#formkeep-embed')
+
+formkeepEmbed.addEventListener('formkeep-embed:submitting', _event => {
+  console.log('Submitting form...')
+})
+
+formkeepEmbed.addEventListener('formkeep-embed:submitted', _event => {
+  console.log('Submitted form...')
+})
+</script>
+    <!-- <form class="contact-form"  action="https://formsubmit.co/titaniumvisuals.sa@gmail.com" method="POST">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
 
@@ -43,7 +60,7 @@
         <textarea id="message" name="message" rows="4" required></textarea>
         
         <button type="submit">Send</button>
-    </form>
+    </form> -->
 </main>
 
 <footer id="footer">
