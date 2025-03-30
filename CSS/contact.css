@@ -1,3 +1,112 @@
+/* Navbar and Side Drawer Styles */
+header {
+    background: #444;
+}
+
+#navbar {
+    text-align: center;
+    position: relative; /* Allows positioning of the hamburger icon */
+}
+
+#navbar-logo {
+    max-width: 125px; /* Set a max width for the logo */
+    margin-bottom: 10px; /* Space between logo and links */
+}
+
+nav {
+    background-color: #444;
+    padding: 15px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex; /* Flexbox for horizontal layout */
+    justify-content: center; /* Center items in the navbar */
+    margin: 0;
+    padding: 0;
+    font-size: 18px; /* Increased font size for better readability */
+}
+
+nav ul li {
+    margin: 0 15px; /* Space between items */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 4px;
+}
+
+#hamburger {
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    display: none; /* Hide by default */
+}
+
+/* Side Drawer Styles */
+#side-drawer {
+    position: fixed; 
+    left: -250px; 
+    top: 0;
+    width: 250px; 
+    height: 100%; 
+    background: #444; 
+    z-index: 100; 
+    transition: left 0.3s ease; 
+}
+
+#side-drawer.hidden {
+    left: -250px; 
+}
+
+#side-drawer:not(.hidden) {
+    left: 0; /* Show the drawer */
+}
+
+#drawer-content {
+    padding: 20px; 
+}
+
+#drawer-close {
+    cursor: pointer; 
+    font-size: 24px; 
+    color: #fff; 
+    float: right; 
+}
+
+/* Side Drawer Link Styles */
+#drawer-content ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+#drawer-content ul li {
+    margin: 20px 0; /* Space between items */
+}
+
+#drawer-content ul li a {
+    color: white; /* Set link color to white */
+    text-decoration: none; /* No underline */
+    font-size: 20px; /* Increase font size for visibility */
+}
+
+#drawer-content ul li a:hover {
+    background-color: #007bff; /* Change background color on hover */
+    border-radius: 4px; /* Add border radius */
+    padding: 5px; /* Add some padding for better click area */
+}
+
+h2 {
+    text-align: center;
+}
+
 /* Styles for the contact form */
 .contact-form {
     display: flex;
@@ -5,10 +114,10 @@
     max-width: 500px; /* Increase max width for better layout */
     margin: 20px auto; /* Center the form and add vertical margin */
     padding: 20px; /* Add padding inside the form */
-    border: 1px solid #ccc; /* Add border to form container */
-    border-radius: 5px; /* Rounded corners for form */
+    border: 2px solid #007bff; /* Border with primary color */
+    border-radius: 8px; /* Rounded corners for form */
     background-color: #ffffff; /* White background for clarity */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
 }
 
 .contact-form label {
@@ -51,5 +160,18 @@
 @media (max-width: 600px) {
     .contact-form {
         width: 90%; /* Full width for smaller screens */
+    }
+
+    #hamburger {
+        display: block; /* Show hamburger icon on smaller screens */
+    }
+
+    nav ul {
+        flex-direction: column; /* Change flex direction for mobile */
+        align-items: flex-start; 
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Space between items */
     }
 }

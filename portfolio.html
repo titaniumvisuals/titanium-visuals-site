@@ -12,18 +12,31 @@
     <title>Our Portfolio</title>
 </head>
 <body>
-<header>
-    <div id="navbar">
-        <img src="./images/Screenshot 2025-03-17 190824.png" alt="Titanium Visuals Logo" id="navbar-logo">
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+    <header>
+        <div id="navbar">
+            <img src="./images/Screenshot 2025-03-17 190824.png" alt="Titanium Visuals Logo" id="navbar-logo">
+            <nav>
+                <ul id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div id="hamburger" onclick="toggleMenu()">&#9776;</div> <!-- Hamburger icon -->
+        </div>
+    </header>
+
+
+<div id="side-drawer" class="hidden">
+    <div id="drawer-content">
+        <div id="drawer-close" onclick="toggleMenu()">×</div> <!-- Close button -->
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
     </div>
-</header>
+</div>
 
 <main>
     <section id="portfolio">
@@ -74,6 +87,30 @@
        <!--  <p>Phone: (123) 456-7890</p> -->
     </div>
 </footer>
+
+<script>
+    function toggleDropdown(dropdownId) {
+        const dropdown = document.getElementById(dropdownId);
+        const arrow = document.querySelector(`#arrow${dropdownId.charAt(dropdownId.length - 1)}`);
+
+        if (dropdown.style.display === "block") {
+            dropdown.style.display = "none";
+            arrow.innerHTML = "▼"; // Down arrow
+        } else {
+            dropdown.style.display = "block";
+            arrow.innerHTML = "▲"; // Up arrow
+        }
+    }
+
+    function toggleMenu() {
+        const sideDrawer = document.getElementById('side-drawer');
+        if (sideDrawer.classList.contains('hidden')) {
+            sideDrawer.classList.remove('hidden');
+        } else {
+            sideDrawer.classList.add('hidden');
+        }
+    }
+</script>
 
 </body>
 </html>

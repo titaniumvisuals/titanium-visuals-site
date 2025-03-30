@@ -1,21 +1,21 @@
-/* General Styles */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@300;500&display=swap');
 
 body {
-    font-family: 'Roboto', sans-serif; /* Updated font for better aesthetics */
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* Light background for the entire page */
+    background-color: #f4f4f4;
 }
 
 /* Header Styles */
 header {
-    background: #444; /* Changed header background color to a darker shade */
+    background: #444;
 }
 
 #navbar {
-    text-align: center; /* Center the navbar content */
+    text-align: center;
+    position: relative; /* Allows positioning of the hamburger icon */
 }
 
 #navbar-logo {
@@ -24,16 +24,16 @@ header {
 }
 
 nav {
-    background-color: #444; /* Darker background for the navbar */
-    padding: 15px; /* Increased padding for better spacing */
+    background-color: #444;
+    padding: 15px;
 }
 
 nav ul {
-    list-style: none; /* Remove bullet points */
+    list-style: none;
     display: flex; /* Flexbox for horizontal layout */
     justify-content: center; /* Center items in the navbar */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+    margin: 0;
+    padding: 0;
     font-size: 18px; /* Increased font size for better readability */
 }
 
@@ -42,177 +42,258 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff; /* White text color */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
-    text-decoration: none; /* Remove underline */
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #fff; /* Keep text color white on hover */
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 4px;
+}
+
+#hamburger {
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    display: none; /* Hide by default */
+}
+
+/* Side Drawer Styles */
+#side-drawer {
+    position: fixed; 
+    left: -250px; 
+    top: 0;
+    width: 250px; 
+    height: 100%; 
+    background: #444; 
+    z-index: 100; 
+    transition: left 0.3s ease; 
+}
+
+#side-drawer.hidden {
+    left: -250px; 
+}
+
+#side-drawer:not(.hidden) {
+    left: 0; /* Show the drawer */
+}
+
+#drawer-content {
+    padding: 20px; 
+}
+
+#drawer-close {
+    cursor: pointer; 
+    font-size: 24px; 
+    color: #fff; 
+    float: right; 
+}
+
+/* Side Drawer Link Styles */
+#drawer-content ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+#drawer-content ul li {
+    margin: 20px 0; /* Space between items */
+}
+
+#drawer-content ul li a {
+    color: white; /* Set link color to white */
+    text-decoration: none; /* No underline */
+    font-size: 20px; /* Increase font size for visibility */
+}
+
+#drawer-content ul li a:hover {
     background-color: #007bff; /* Change background color on hover */
-    border-radius: 4px; /* Add border radius for a smoother look */
+    border-radius: 4px; /* Add border radius */
+    padding: 5px; /* Add some padding for better click area */
 }
 
 /* Mobile Styles */
 @media (max-width: 768px) {
+    #nav-links {
+        display: none; /* Hide links by default */
+    }
+
+    #hamburger {
+        display: block; /* Show hamburger icon */
+    }
+
     nav ul {
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center items */
+        flex-direction: column; /* Change flex direction for mobile */
+        align-items: flex-start; 
+        margin: 0; /* Remove default margin */
+        padding: 0; /* Remove default padding */
     }
 
     nav ul li {
         margin: 10px 0; /* Space between items */
+        list-style-type: none; /* Remove bullet points */
+        font-size: 20px; /* Make links larger on smaller screens */
+        color: white; /* Make the links white */
     }
 
-    body {
-        padding: 10px; /* Adjust padding for mobile */
+    nav ul li a {
+        color: white; /* Make link text white */
+        text-decoration: none; /* Ensure no underline on links */
+        padding: 10px; /* Add some padding around link text */
+    }
+
+    nav ul li a:hover {
+        background-color: #007bff; /* Change background color on hover */
+        border-radius: 4px; /* Add border radius */
     }
 }
 
 /* Welcome Section Styles */
 #welcome {
-    background-image: url('./images/pakata-goh-dtya6wKsEpU-unsplash.jpg'); /* Make sure to replace this with the actual path */
-    color: white; /* Set text color for welcome section */
-    text-align: center;
-    padding: 0; /* Removed padding to eliminate space */
-    height: 300px; /* Keep height consistent */
-    background-size: cover; /* Background image covers the whole section */
-    background-position: center; /* Center the background image */
+    background-image: url('../images/pakata-goh-dtya6wKsEpU-unsplash.jpg'); 
+    color: white; 
+    text-align: center; 
+    height: 300px; 
+    background-size: cover; 
+    background-position: center; 
+}
+
+.welcome-section {
+    color: white; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+}
+
+.welcome-section h1 {
+    color: white; 
+    font-size: 2.5rem; 
+    font-weight: bold; 
+    margin: 0;
+}
+
+.welcome-section p {
+    color: #ffffff;
+    font-size: 1.25rem; 
+    max-width: 600px; 
+    margin-top: 15px; 
+    padding: 0 20px; 
 }
 
 /* What We Do Section Styles */
 #what-we-do {
-    background: #333; /* Darker background */
-    color: #fff; /* White text color for readability */
-    text-align: center; /* Centered text */
-    border: 1px solid #ccc; /* Border for visual separation */
-    padding: 20px; /* Add padding for spacing */
+    background: #333; 
+    color: #fff; 
+    text-align: center; 
+    padding: 20px; 
 }
 
-/* Service Images */
+.services-container {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+}
+
+.service-item {
+    margin: 10px; 
+    flex: 1 1 30%; 
+    min-width: 250px; 
+    text-align: center; 
+}
+
 .service-item img {
-    width: 300px; /* Set width for service images */
-    height: 200px; /* Maintain height */
-    object-fit: cover; /* Preserve aspect ratio */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Drop shadow for depth */
+    width: 300px; 
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); 
 }
 
 /* Button Styles */
 .service-item button {
-    background: none; /* No background */
-    border: none; /* No border */
-    color: #fff; /* White text */
-    cursor: pointer; /* Pointer on hover */
-    font-size: 16px; /* Font size */
-    transition: color 0.3s; /* Smooth color transition */
+    background: none; 
+    border: none; 
+    color: #fff; 
+    cursor: pointer; 
+    font-size: 16px; 
+    transition: color 0.3s; 
 }
 
 .service-item button:hover {
-    color: #007bff; /* Change color on hover */
+    color: #007bff; 
 }
 
 /* Dropdown Styles */
 .dropdown-content {
-    display: none; /* Hidden by default */
-    background-color: #fff; /* White background for dropdown */
-    color: #333; /* Dark text color for dropdown items */
-    min-width: 200px; /* Minimum width for dropdown */
-    padding: 12px; /* Padding inside dropdown */
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Shadow for dropdown */
-    z-index: 1; /* Ensure dropdown is on top */
+    display: none; 
+    background-color: #fff; 
+    color: #333; 
+    min-width: 200px; 
+    padding: 12px; 
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); 
 }
 
 .dropdown-content p {
-    padding: 8px 0; /* Padding for a cleaner look */
-    margin: 0; /* Remove margin */
+    padding: 8px 0; 
+    margin: 0; 
 }
 
 .dropdown-content p:hover {
-    background-color: #f1f1f1; /* Change background on hover */
-}
-
-/* Show the dropdown */
-.show {
-    display: block; /* Show the dropdown */
+    background-color: #f1f1f1; 
 }
 
 /* Testimonials Section Styles */
 #testimonials {
-    background: #f0f0f0; /* Light grey background */
-    color: #333; /* Dark text color for readability */
-    text-align: center; /* Centered text */
-    border: 1px solid #ccc; /* Border for visual separation */
+    background: #f0f0f0; 
+    color: #333; 
+    text-align: center; 
 }
 
 .review-container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center the review items */
+    align-items: center; 
 }
 
 .review {
     display: flex;
     align-items: center;
-    margin-bottom: 40px; /* Space between reviews */
-    max-width: 800px; /* Limit the max width */
+    margin-bottom: 40px; 
+    max-width: 800px; 
     padding: 10px;
-    border-radius: 8px; /* Rounded corners for reviews */
-    background-color: #fff; /* White background for reviews */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 8px; 
+    background-color: #fff; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
 }
 
 .review.reverse {
-    flex-direction: row-reverse; /* Reverse order for alternating layout */
+    flex-direction: row-reverse; 
 }
 
 .review img {
     width: 60px; 
     height: 60px; 
     border-radius: 50%; 
-    margin: 0 15px; /* Space around images */
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2); /* Shadow for images */
+    margin: 0 15px; 
 }
 
 blockquote {
-    text-align: left; /* Align text to the left */
-    flex: 1; /* Allow text to take available space */
-    margin: 0; /* Remove default margin */
+    text-align: left; 
+    flex: 1; 
+    margin: 0; 
 }
 
 /* Clients Say Section */
 #clients-say {
-    font-size: 2.5rem; /* Increased font size for the clients-say heading */
+    font-size: 2.5rem; 
     color: black;
     text-decoration: underline;
 }
 
-/* Footer Styles */
-#footer {
-    background: #333; /* Dark footer background */
-}
-
-#footer-logo img {
-    max-width: 125px; /* Set a max width for the footer logo */
-}
-
-#footer h3 {
-    color: #fff; /* White color for footer headings */
-}
-
-#footer ul {
-    list-style: none; /* No bullet points for footer links */
-    padding: 0; /* Remove padding */
-}
-
-#footer ul li {
-    margin: 5px 0; /* Space between footer links */
-    color: #ffffff; /* White color for footer links */
-}
-
-/* Mobile Styles for Footer */
-@media (max-width: 768px) {
-    #footer {
-        padding: 10px; /* Adjust footer padding for mobile */
-    }
+/* Add margin to create space between content and footer */
+main {
+    margin-bottom: 40px; 
 }

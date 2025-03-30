@@ -1,49 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/styles.css">
-    <link rel="stylesheet" href="CSS/contact.css">
-    <link rel="stylesheet" href="CSS/footer.css">
-    <link rel="icon" href="./images/favicon_io/favicon-16x16.png" sizes="16x16" type="image/png">
-    <link rel="icon" href="./images/favicon_io/favicon-32x32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="./images/favicon_io/favicon.ico" sizes="48x48" type="image/png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <link rel="stylesheet" href="CSS/contact.css" />
+    <link rel="stylesheet" href="CSS/footer.css" />
+    <link
+      rel="icon"
+      href="./images/favicon_io/favicon-16x16.png"
+      sizes="16x16"
+      type="image/png"
+    />
+    <link
+      rel="icon"
+      href="./images/favicon_io/favicon-32x32.png"
+      sizes="32x32"
+      type="image/png"
+    />
+    <link
+      rel="icon"
+      href="./images/favicon_io/favicon.ico"
+      sizes="48x48"
+      type="image/png"
+    />
     <title>Contact Us</title>
-</head>
-<body>
-<header>
-    <div id="navbar">
-        <img src="./images/Screenshot 2025-03-17 190824.png" alt="Titanium Visuals Logo" id="navbar-logo">
+  </head>
+  <body>
+    <header>
+      <div id="navbar">
+        <img
+          src="./images/Screenshot 2025-03-17 190824.png"
+          alt="Titanium Visuals Logo"
+          id="navbar-logo"
+        />
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+          <ul id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
         </nav>
-    </div>
-</header>
-<main>
-    <h2>Contact Us</h2>
-    <div id="formkeep-embed" data-formkeep-url="https://formkeep.com/p/65af3948b8b01ad540e773e6d2a6f889?embedded=1"></div>
+        <div id="hamburger" onclick="toggleMenu()">&#9776;</div>
+        <!-- Hamburger icon -->
+      </div>
+    </header>
+    <main>
+      <h2>Contact Us</h2>
+      <form class="contact-form" action="https://formspree.io/f/meoalpoe" method="POST">
+        <label for="name">Name:</label><br />
+        <input type="text" id="name" name="name" required /><br /><br />
+    
+        <label for="surname">Surname:</label><br />
+        <input type="text" id="surname" name="surname" required /><br /><br />
+    
+        <label for="phone">Phone Number (Optional):</label><br />
+        <input type="tel" id="phone" name="phone" /><br /><br />
+    
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" name="email" required /><br /><br />
+    
+        <label for="message">Message:</label><br />
+        <textarea id="message" name="message" required></textarea><br /><br />
+    
+        <button type="submit">Submit</button>
+    </form>
+      <script
+        type="text/javascript"
+        src="https://pym.nprapps.org/pym.v1.min.js"
+      ></script>
+      <script
+        type="text/javascript"
+        src="https://cdn.formkeep.com/formkeep-embed.js"
+      ></script>
 
-<script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
-<script type="text/javascript" src="https://cdn.formkeep.com/formkeep-embed.js"></script>
+      <!-- Get notified when the form is submitted, add your own code below: -->
+     <!--  <script>
+        const formkeepEmbed = document.querySelector("#formkeep-embed");
 
-<!-- Get notified when the form is submitted, add your own code below: -->
-<script>
-const formkeepEmbed = document.querySelector('#formkeep-embed')
+        formkeepEmbed.addEventListener(
+          "formkeep-embed:submitting",
+          (_event) => {
+            console.log("Submitting form...");
+          }
+        );
 
-formkeepEmbed.addEventListener('formkeep-embed:submitting', _event => {
-  console.log('Submitting form...')
-})
-
-formkeepEmbed.addEventListener('formkeep-embed:submitted', _event => {
-  console.log('Submitted form...')
-})
-</script>
-    <!-- <form class="contact-form"  action="https://formsubmit.co/titaniumvisuals.sa@gmail.com" method="POST">
+        formkeepEmbed.addEventListener("formkeep-embed:submitted", (_event) => {
+          console.log("Submitted form...");
+        });
+      </script> -->
+      <!-- <form class="contact-form"  action="https://formsubmit.co/titaniumvisuals.sa@gmail.com" method="POST">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
 
@@ -61,33 +107,76 @@ formkeepEmbed.addEventListener('formkeep-embed:submitted', _event => {
         
         <button type="submit">Send</button>
     </form> -->
-</main>
+    </main>
 
-<footer id="footer">
-    <div id="footer-logo">
-        <img src="./images/Screenshot 2025-03-17 190824.png" alt="Titanium Visuals Logo">
+    <div id="side-drawer" class="hidden">
+      <div id="drawer-content">
+        <div id="drawer-close" onclick="toggleMenu()">×</div>
+        <!-- Close button -->
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </div>
-    <div id="footer-quick-links">
+
+    <footer id="footer">
+      <div id="footer-logo">
+        <img
+          src="./images/Screenshot 2025-03-17 190824.png"
+          alt="Titanium Visuals Logo"
+        />
+      </div>
+      <div id="footer-quick-links">
         <h3>Quick Links</h3>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
-    </div>
-    <div id="footer-social-media">
+      </div>
+      <div id="footer-social-media">
         <h3>Follow Us</h3>
         <ul>
-            <!-- <li><a href="https://facebook.com">Facebook</a></li>
+          <!-- <li><a href="https://facebook.com">Facebook</a></li>
             <li><a href="https://twitter.com">Twitter</a></li> -->
-            <li><a href="https://www.instagram.com/titanium_visuals">Instagram</a></li>
+          <li>
+            <a href="https://www.instagram.com/titanium_visuals">Instagram</a>
+          </li>
         </ul>
-    </div>
-    <div id="footer-contact-info">
+      </div>
+      <div id="footer-contact-info">
         <h3>Contact Us</h3>
         <p>Email: titaniumvisuals.sa@gmail.com</p>
-       <!--  <p>Phone: (123) 456-7890</p> -->
-    </div>
-</footer>
-</body>
+        <!--  <p>Phone: (123) 456-7890</p> -->
+      </div>
+    </footer>
+
+    <script>
+      function toggleDropdown(dropdownId) {
+        const dropdown = document.getElementById(dropdownId);
+        const arrow = document.querySelector(
+          `#arrow${dropdownId.charAt(dropdownId.length - 1)}`
+        );
+
+        if (dropdown.style.display === "block") {
+          dropdown.style.display = "none";
+          arrow.innerHTML = "▼"; // Down arrow
+        } else {
+          dropdown.style.display = "block";
+          arrow.innerHTML = "▲"; // Up arrow
+        }
+      }
+
+      function toggleMenu() {
+        const sideDrawer = document.getElementById("side-drawer");
+        if (sideDrawer.classList.contains("hidden")) {
+          sideDrawer.classList.remove("hidden");
+        } else {
+          sideDrawer.classList.add("hidden");
+        }
+      }
+    </script>
+  </body>
 </html>

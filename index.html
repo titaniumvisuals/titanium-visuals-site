@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,191 +10,143 @@
     <link rel="icon" href="./images/favicon_io/favicon-16x16.png" sizes="16x16" type="image/png">
     <link rel="icon" href="./images/favicon_io/favicon-32x32.png" sizes="32x32" type="image/png">
     <link rel="icon" href="./images/favicon_io/favicon.ico" sizes="48x48" type="image/png">
-    <style>
-        h2 {
-            font-family: 'Arial', sans-serif; /* Updated font for headings */
-            color: #fff; /* White color for headings */
-        }
-
-        /* Center content within the welcome section vertically without changing height */
-        .welcome-section {
-            display: flex;
-            flex-direction: column;
-            justify-content: center; /* This centers the content vertically */
-            align-items: center; /* This centers the content horizontally */
-            text-align: center; /* Center the text */
-            height: 300px; /* Keep the height unchanged */
-        }
-
-        .welcome-section h1 {
-            color: white; /* Set heading color to white */
-            font-size: 2.5rem; /* Increase font size for the welcome heading */
-            font-weight: bold; /* Set font weight */
-            margin: 0; /* Remove default margin */
-        }
-
-        .welcome-section p {
-            color: #ffffff; /* Set paragraph color to white */
-            font-size: 1.25rem; /* Increase font size */
-            max-width: 600px; /* Limit the width for better readability */
-            margin-top: 15px; /* Add some space above the paragraph */
-            line-height: 1.6; /* Add line-height for better readability */
-            padding: 0 20px; /* Add some padding for mobile responsiveness */
-        }
-
-        .review-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Center the review items */
-            margin: 20px 0; /* Margin for spacing */
-        }
-
-        .review {
-            display: flex;
-            align-items: center;
-            margin-bottom: 40px; /* Space between reviews */
-            max-width: 800px; /* Limit the max width */
-            padding: 10px;
-            border-radius: 8px; /* Rounded corners for reviews */
-            background-color: #fff; /* White background for reviews */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-        }
-
-        .review.reverse {
-            flex-direction: row-reverse; /* Reverse order for alternating layout */
-        }
-
-        .review img {
-            width: 60px; 
-            height: 60px; 
-            border-radius: 50%; 
-            margin: 0 15px; /* Space around images */
-            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2); /* Shadow for images */
-        }
-
-        blockquote {
-            text-align: left; /* Align text to the left */
-            flex: 1; /* Allow text to take available space */
-            margin: 0; /* Remove default margin */
-        }
-    </style>
 </head>
+
 <body>
-<header>
-    <div id="navbar">
-        <img src="./images/Screenshot 2025-03-17 190824.png" alt="Titanium Visuals Logo" id="navbar-logo">
-        <nav>
+    <header>
+        <div id="navbar">
+            <img src="./images/Screenshot 2025-03-17 190824.png" alt="Titanium Visuals Logo" id="navbar-logo">
+            <nav>
+                <ul id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div id="hamburger" onclick="toggleMenu()">&#9776;</div> <!-- Hamburger icon -->
+        </div>
+    </header>
+
+    <main>
+        <section id="welcome" class="welcome-section">
+            <h1>Welcome to Titanium Visuals</h1>
+            <p>As your dedicated partner, we specialize in delivering high-quality visual solutions that elevate your online presence. Our team is committed to bringing your vision to life, using creative designs and strategic insights to make an impact in the digital world.</p>
+        </section>
+
+        <section id="what-we-do" class="services-section">
+            <h2>Our Services</h2>
+            <p>We specialize in a variety of services tailored to your needs:</p>
+            <div class="services-container">
+                <div class="service-item" id="service-online-marketing">
+                    <img src="images/alexander-shatov-mr4JG4SYOF8-unsplash.jpg" alt="Online Marketing" class="service-image">
+                    <h3>Online Marketing</h3>
+                    <button onclick="toggleDropdown('dropdown1')">Details <span class="arrow" id="arrow1">▼</span></button>
+                    <div id="dropdown1" class="dropdown-content">
+                        <p>SEO: Improve your visibility on search engines.</p>
+                        <p>Social Media Marketing: Engage with your audience on platforms like Facebook, Instagram, and Twitter.</p>
+                        <p>Content Marketing: Create valuable content to attract and retain customers.</p>
+                    </div>
+                </div>
+                <div class="service-item" id="service-web-design">
+                    <img src="images/chris-ried-ieic5Tq8YMk-unsplash.jpg" alt="Web Design" class="service-image">
+                    <h3>Web Design</h3>
+                    <button onclick="toggleDropdown('dropdown2')">Details <span class="arrow" id="arrow2">▼</span></button>
+                    <div id="dropdown2" class="dropdown-content">
+                        <p>Responsive Design: Ensure your website looks great on all devices.</p>
+                        <p>E-commerce Solutions: Set up your online store with ease.</p>
+                        <p>UI/UX Design: Enhance user satisfaction with our design services.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials-section">
+            <h2 id="clients-say">What Our Clients Say</h2>
+            <div class="review-container">
+                <div class="review">
+                    <img src="./images/jurica-koletic-7YVZYZeITc8-unsplash.jpg" alt="Reviewer 1">
+                    <blockquote>
+                        <footer>"Titanium Visuals transformed our online presence! Highly recommend their services!"</footer>
+                        <p>- John Doe</p>
+                    </blockquote>
+                </div>
+                <div class="review reverse">
+                    <blockquote>
+                        <footer>"Fantastic work, very professional!"</footer>
+                        <p>- Jane Smith</p>
+                    </blockquote>
+                    <img src="images/christopher-campbell-rDEOVtE7vOs-unsplash.jpg" alt="Reviewer 2">
+                </div>
+                <div class="review">
+                    <img src="images/prince-akachi-i2hoD-C2RUA-unsplash.jpg" alt="Reviewer 3">
+                    <blockquote>
+                        <footer>"Their creativity and attention to detail are unmatched!"</footer>
+                        <p>- Emily Johnson</p>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="side-drawer" class="hidden">
+        <div id="drawer-content">
+            <div id="drawer-close" onclick="toggleMenu()">×</div> <!-- Close button -->
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-        </nav>
-    </div>
-</header>
-
-<main>
-    <section id="welcome" class="welcome-section" style="background-image: url(./images/pakata-goh-dtya6wKsEpU-unsplash.jpg);">
-        <h1>Welcome to Titanium Visuals</h1>
-        <p>As your dedicated partner, we specialize in delivering high-quality visual solutions that elevate your online presence. Our team is committed to bringing your vision to life, using creative designs and strategic insights to make an impact in the digital world.</p>
-    </section>
-
-    <section id="what-we-do" class="services-section" style="background-color: #333; border: 1px solid #ccc; text-align: center; color: #fff; padding: 20px;">
-        <h2>Our Services</h2>
-        <p>We specialize in a variety of services tailored to your needs:</p>
-        <div class="services-container" style="display: flex; flex-wrap: wrap; justify-content: center;">
-            <div class="service-item" style="margin: 10px; flex: 1 1 30%; max-width: 30%; text-align: center;">
-                <img src="images/alexander-shatov-mr4JG4SYOF8-unsplash.jpg" alt="Online Marketing" class="service-image">
-                <h3>Online Marketing</h3>
-                <button onclick="toggleDropdown('dropdown1')">Details <span class="arrow" id="arrow1">▼</span></button>
-                <div id="dropdown1" class="dropdown-content">
-                    <p>SEO: Improve your visibility on search engines.</p>
-                    <p>Social Media Marketing: Engage with your audience on platforms like Facebook, Instagram, and Twitter.</p>
-                    <p>Content Marketing: Create valuable content to attract and retain customers.</p>
-                </div>
-            </div>
-            <div class="service-item" style="margin: 10px; flex: 1 1 30%; max-width: 30%; text-align: center;">
-                <img src="images/chris-ried-ieic5Tq8YMk-unsplash.jpg" alt="Web Design" class="service-image">
-                <h3>Web Design</h3>
-                <button onclick="toggleDropdown('dropdown2')">Details <span class="arrow" id="arrow2">▼</span></button>
-                <div id="dropdown2" class="dropdown-content">
-                    <p>Responsive Design: Ensure your website looks great on all devices.</p>
-                    <p>E-commerce Solutions: Set up your online store with ease.</p>
-                    <p>UI/UX Design: Enhance user satisfaction with our design services.</p>
-                </div>
-            </div>
         </div>
-    </section>
+    </div>
 
-    <section id="testimonials" class="testimonials-section" style="background: #f0f0f0;"> 
-        <h2 id="clients-say">What Our Clients Say</h2>
-
-        <div class="review-container">
-            <div class="review">
-                <img src="./images/jurica-koletic-7YVZYZeITc8-unsplash.jpg" alt="Reviewer 1">
-                <blockquote>
-                    <footer>"Titanium Visuals transformed our online presence! Highly recommend their services!"</footer>
-                    <p>- John Doe</p>
-                </blockquote>
-            </div>
-            <div class="review reverse">
-                <blockquote>
-                    <footer>"Fantastic work, very professional!"</footer>
-                    <p>- Jane Smith</p>
-                </blockquote>
-                <img src="images/christopher-campbell-rDEOVtE7vOs-unsplash.jpg" alt="Reviewer 2">
-            </div>
-            <div class="review">
-                <img src="images/prince-akachi-i2hoD-C2RUA-unsplash.jpg" alt="Reviewer 3">
-                <blockquote>
-                    <footer>"Their creativity and attention to detail are unmatched!"</footer>
-                    <p>- Emily Johnson</p>
-                </blockquote>
-            </div>
+    <footer id="footer">
+        <div id="footer-logo">
+            <img src="./images/Screenshot 2025-03-17 190824.png" alt="Titanium Visuals Logo">
         </div>
-    </section>
-</main>
+        <div id="footer-quick-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div id="footer-social-media">
+            <h3>Follow Us</h3>
+            <ul>
+                <li><a href="https://www.instagram.com/titanium_visuals">Instagram</a></li>
+            </ul>
+        </div>
+        <div id="footer-contact-info">
+            <h3>Contact Us</h3>
+            <p>Email: titaniumvisuals.sa@gmail.com</p>
+        </div>
+    </footer>
 
-<footer id="footer">
-    <div id="footer-logo">
-        <img src="./images/Screenshot 2025-03-17 190824.png" alt="Titanium Visuals Logo">
-    </div>
-    <div id="footer-quick-links">
-        <h3>Quick Links</h3>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </div>
-    <div id="footer-social-media">
-        <h3>Follow Us</h3>
-        <ul>
-     <!--        <li><a href="https://facebook.com">Facebook</a></li>
-            <li><a href="https://twitter.com">Twitter</a></li> -->
-            <li><a href="https://www.instagram.com/titanium_visuals">Instagram</a></li>
-        </ul>
-    </div>
-    <div id="footer-contact-info">
-        <h3>Contact Us</h3>
-        <p>Email: titaniumvisuals.sa@gmail.com</p>
-        <!-- <p>Phone: (123) 456-7890</p> -->
-    </div>
-</footer>
+    <script>
+        function toggleDropdown(dropdownId) {
+            const dropdown = document.getElementById(dropdownId);
+            const arrow = document.querySelector(`#arrow${dropdownId.charAt(dropdownId.length - 1)}`);
 
-<script>
-function toggleDropdown(dropdownId) {
-    const dropdown = document.getElementById(dropdownId);
-    const arrow = document.querySelector(`#arrow${dropdownId.charAt(dropdownId.length - 1)}`);
-    
-    if (dropdown.style.display === "block") {
-        dropdown.style.display = "none";
-        arrow.innerHTML = "▼"; // Down arrow
-    } else {
-        dropdown.style.display = "block";
-    }
-}
-</script>
+            if (dropdown.style.display === "block") {
+                dropdown.style.display = "none";
+                arrow.innerHTML = "▼"; // Down arrow
+            } else {
+                dropdown.style.display = "block";
+                arrow.innerHTML = "▲"; // Up arrow
+            }
+        }
+
+        function toggleMenu() {
+            const sideDrawer = document.getElementById('side-drawer');
+            if (sideDrawer.classList.contains('hidden')) {
+                sideDrawer.classList.remove('hidden');
+            } else {
+                sideDrawer.classList.add('hidden');
+            }
+        }
+    </script>
 
 </body>
+
 </html>
